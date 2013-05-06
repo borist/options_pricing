@@ -1,4 +1,7 @@
-Black Scholes
-=============
+Options Pricing
+===============
 
-Python module for pricing financial options with the black-scholes-merton formula
+Black Scholes
+-------------
+
+`black_scholes.py` is a python module for pricing financial options with the black-scholes-merton formula.
