@@ -11,4 +11,4 @@ Black Scholes
 Binomial Options Pricing
 ------------------------
 
-`binomial.py` is a python module for pricing financial options with the binomial options pricing model. It contains two implementations of the model (for both call and put options), the first of which, `call` and `put`, is a more straight-forward implementation, and the second of which, `call2` and `put2` is a faster implementation.
+`binomial.py` is a python module for pricing financial options with the binomial options pricing model. It contains two implementations of the model (for both call and put options), the first of which, containing `call` and `put`, is a more straight-forward implementation, and the second of which, containing `call2` and `put2`, is a faster implementation.
