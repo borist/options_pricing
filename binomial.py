@@ -22,7 +22,7 @@ def call(S, K, sigma, r, t, div=0, n=100, am=False):
 
 def put(S, K, sigma, r, t, div=0, n=100, am=False):
     """
-    Price a call option using the Binomial Options Pricing model
+    Price a put option using the Binomial Options Pricing model
 
     S: initial spot price of stock
     K: strick price of option
@@ -40,7 +40,7 @@ def put(S, K, sigma, r, t, div=0, n=100, am=False):
 
 def option(S, K, sigma, r, t, div=0, call=1, n=100, am=False):
     """
-    Price a call option using the Binomial Options Pricing model
+    Price an option using the Binomial Options Pricing model
 
     S: initial spot price of stock
     K: strick price of option
