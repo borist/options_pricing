@@ -6,55 +6,75 @@ from scipy.stats import norm
 # -------------------------------------------------
 
 
-# d1 term used in B.S. formula
 def d1(S, K, sigma, r, t):
+    """
+    d1 term used in B.S. formula
+    """
     numerator = math.log(S/K) + (r + (sigma*sigma)/2.0) * t
     denom = sigma * math.sqrt(t)
     return numerator / denom
 
 
-# d2 term used in B.S. formula
 def d2(S, K, sigma, r, t):
+    """
+    d2 term used in B.S. formula
+    """
     return d1(S, K, sigma, r, t) - sigma*math.sqrt(t)
 
 
-# ----------------------------------------------
-# Black-Scholes pricing for European Call Option
-# ----------------------------------------------
 def call(S, K, sigma, r, t):
+    """
+    Return the price of a European Call Option using the Black-Scholes pricing
+    model
+
+    S: initial spot price of stock
+    K: strike price of option
+    sigma: volatility
+    r: risk-free interest rate
+    t: time to maturity (in years)
+    """
     v1 = d1(S, K, sigma, r, t)
     v2 = d2(S, K, sigma, r, t)
     return S * norm.cdf(v1) - K * math.exp(-r * t) * norm.cdf(v2)
 
 
-# ---------------------------------------------
-# Black-Scholes pricing for European Put Option
-# ---------------------------------------------
 def put(S, K, sigma, r, t):
+    """
+    Return the price of a European Put Option using the Black-Scholes pricing
+    model
+
+    S: initial spot price of stock
+    K: strike price of option
+    sigma: volatility
+    r: risk-free interest rate
+    t: time to maturity (in years)
+    """
     v1 = d1(S, K, sigma, r, t)
     v2 = d2(S, K, sigma, r, t)
     return K * math.exp(-r * t) * norm.cdf(-v2) - S * norm.cdf(-v1)
 
 
-# ------------------------------------------
-# Calculate call price using put-call parity
-# ------------------------------------------
-#   S: equity spot price
-#   K: option strike price
-#   r: risk-free interest rate
-#   c: call option price
-#
 def put_call_put(S, K, r, t, c):
+    """
+    Return the price of a European Put Option using the put-call parity
+
+    S: initial spot price of stock
+    K: strike price of option
+    r: risk-free interest rate
+    t: time to maturity (in years)
+    c: call option price
+    """
     return K * math.exp(-r * t) + c - S
 
 
-# ------------------------------------------
-# Calculate call price using put-call parity
-# ------------------------------------------
-#   S: equity spot price
-#   K: option strike price
-#   r: risk-free interest rate
-#   p: put option price
-#
 def put_call_call(S, K, r, t, p):
+    """
+    Return the price of a European Call Option using the put-call parity
+
+    S: initial spot price of stock
+    K: strike price of option
+    r: risk-free interest rate
+    t: time to maturity (in years)
+    p: put option price
+    """
     return S + p - K * math.exp(-r * t)
