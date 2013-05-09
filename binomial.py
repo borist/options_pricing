@@ -79,7 +79,7 @@ def option(S, K, sigma, r, t, div=0, call=1, n=100, am=False):
     return opt_val[0, 0]
 
 
-def call2(S, K, sigma, r, t, div=0, n=100):
+def call2(S, K, sigma, r, t, div=0, n=100, am=False):
     """
     Price a call option using the Binomial Options Pricing model
 
@@ -93,10 +93,10 @@ def call2(S, K, sigma, r, t, div=0, n=100):
 
     %timeit results: 10000 loops, best of 3: 139 us per loop
     """
-    return option2(S, K, sigma, r, t, div, 1, n)
+    return option2(S, K, sigma, r, t, div, 1, n, am)
 
 
-def put2(S, K, sigma, r, t, div=0, n=100):
+def put2(S, K, sigma, r, t, div=0, n=100, am=False):
     """
     Price a put option using the Binomial Options Pricing model
 
@@ -110,10 +110,10 @@ def put2(S, K, sigma, r, t, div=0, n=100):
 
     %timeit results: 10000 loops, best of 3: 136 us per loop
     """
-    return option2(S, K, sigma, r, t, div, -1, n)
+    return option2(S, K, sigma, r, t, div, -1, n, am)
 
 
-def option2(S, K, sigma, r, t, div=0, call=1, n=100):
+def option2(S, K, sigma, r, t, div=0, call=1, n=100, am=False):
     """
     Price an option using the Binomial Options Pricing model
 
