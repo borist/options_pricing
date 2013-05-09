@@ -1,9 +1,11 @@
 import math
 from scipy.stats import norm
 
-# -------------------------------------------------
-# Black-Scholes-Merton pricing for European Options
-# -------------------------------------------------
+"""
+This module provides an interface for pricing European Financial Options with
+the Black-Scholes-Merton pricing model. Additionally, it provides an interface
+for pricing European Options with the Put-Call Parity.
+"""
 
 
 def d1(S, K, sigma, r, t):
