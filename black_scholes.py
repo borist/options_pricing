@@ -26,8 +26,7 @@ def d2(S, K, sigma, r, t):
 
 def call(S, K, sigma, r, t):
     """
-    Return the price of a European Call Option using the Black-Scholes pricing
-    model
+    Return the price of a European Call Option using the Black-Scholes formula
 
     S: initial spot price of stock
     K: strike price of option
@@ -42,8 +41,7 @@ def call(S, K, sigma, r, t):
 
 def put(S, K, sigma, r, t):
     """
-    Return the price of a European Put Option using the Black-Scholes pricing
-    model
+    Return the price of a European Put Option using the Black-Scholes formula
 
     S: initial spot price of stock
     K: strike price of option
